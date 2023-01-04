@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="IntroductionToCoreImage" customModuleProvider="target">
+            <connections>
+                <outlet property="mtkView" destination="lKP-iX-TDx" id="iGJ-lK-9za"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7aY-Ax-j7a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="core-image-logo" translatesAutoresizingMaskIntoConstraints="NO" id="QCY-jr-I8f">
+                    <rect key="frame" x="109" y="159" width="175" height="175"/>
+                    <gestureRecognizers/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Core Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-4W-22k">
+                    <rect key="frame" x="142" y="342" width="109.33333333333331" height="26.333333333333314"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An image processing framework" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-6E-8c1">
+                    <rect key="frame" x="79.666666666666686" y="372.33333333333331" width="234" height="20"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar7-z0-c0C">
+                    <rect key="frame" x="32" y="770" width="329" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="OsH-I2-kHS"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Sample projects" cornerStyle="capsule"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijR-t3-ZlD">
+                    <rect key="frame" x="32" y="714" width="329" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Zkr-Jo-LUx"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Documentation" cornerStyle="capsule"/>
+                </button>
+                <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="lKP-iX-TDx">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </mtkView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Ar7-z0-c0C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Dfa-BX-oZ0"/>
+                <constraint firstItem="l7Q-4W-22k" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Iwn-uT-dUG"/>
+                <constraint firstItem="rhT-6E-8c1" firstAttribute="top" secondItem="l7Q-4W-22k" secondAttribute="bottom" constant="4" id="JSP-qH-WGQ"/>
+                <constraint firstItem="QCY-jr-I8f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="KvK-TA-dAL"/>
+                <constraint firstItem="l7Q-4W-22k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="LQC-bL-btA"/>
+                <constraint firstItem="Ar7-z0-c0C" firstAttribute="top" secondItem="ijR-t3-ZlD" secondAttribute="bottom" constant="8" id="MBB-mA-m2z"/>
+                <constraint firstItem="Ar7-z0-c0C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="NFn-RB-KpB"/>
+                <constraint firstItem="ijR-t3-ZlD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OP9-LI-h1X"/>
+                <constraint firstItem="ijR-t3-ZlD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Qzh-nU-u96"/>
+                <constraint firstItem="QCY-jr-I8f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cYX-D4-bRt"/>
+                <constraint firstItem="Ar7-z0-c0C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="d1N-hM-4Oh"/>
+                <constraint firstItem="rhT-6E-8c1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="oH9-H2-feg"/>
+                <constraint firstAttribute="trailing" secondItem="lKP-iX-TDx" secondAttribute="trailing" id="ohk-BA-PLe"/>
+                <constraint firstItem="rhT-6E-8c1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pBZ-CV-EM6"/>
+                <constraint firstItem="lKP-iX-TDx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pWV-OI-erE"/>
+                <constraint firstAttribute="bottom" secondItem="lKP-iX-TDx" secondAttribute="bottom" id="pz6-vD-Wtk"/>
+                <constraint firstItem="lKP-iX-TDx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="utG-wQ-dV9"/>
+                <constraint firstItem="l7Q-4W-22k" firstAttribute="top" secondItem="QCY-jr-I8f" secondAttribute="bottom" constant="8" id="yrT-jA-qep"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="ICi-AK-MuQ" appends="YES" id="iec-Mw-Hk0"/>
+            </connections>
+            <point key="canvasLocation" x="61.832061068702288" y="41.549295774647888"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="ICi-AK-MuQ">
+            <connections>
+                <action selector="panGestureRecognized:" destination="-1" id="qPM-7E-oCz"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="core-image-logo" width="175" height="175"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

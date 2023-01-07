@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    func snapshot() -> UIImage {
+    public func snapshot() -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: bounds.size)
         return renderer.image { _ in drawHierarchy(in: bounds, afterScreenUpdates: true) }
     }

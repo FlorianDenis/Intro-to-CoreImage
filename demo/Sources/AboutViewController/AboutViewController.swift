@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AboutViewController.swift
 //  IntroductionToCoreImage
 //
 //  Created by Florian Denis on 04/01/2023.
@@ -10,31 +10,28 @@ import CoreImage.CIFilterBuiltins
 import MetalKit
 import UIKit
 
-extension CIImage {
-    func applyingFilter<T: CIFilter>(_ filter: T, _ configurationBlock: ((T) -> Void)? = nil) -> CIImage {
-        filter.setValue(self, forKey: kCIInputImageKey)
-        configurationBlock?(filter)
-        return filter.outputImage ?? self
-    }
-}
-
-
 class AboutViewController: UIViewController {
+    public var nextPressedHandler: (() -> Void)?
+    
     private var snapshotImage: CIImage?
     private var gestureLocation: CGPoint?
 
     private var processedImage: CIImage? {
-//        snapshotImage?
-//            .applyingFilter(CIFilter.bumpDistortion()) {
-//                $0.center = self.gestureLocation ?? .zero
-//                $0.radius = 300
-//                $0.scale = 0.3 + Float(1 + cos(CACurrentMediaTime())) / 3
-//            }
-        snapshotImage?
+        guard
+            let center = self.gestureLocation,
+            let snapshot = snapshotImage
+        else { return nil }
+        
+        return snapshot
             .applyingFilter(CIFilter.twirlDistortion()) {
-                $0.center = self.gestureLocation ?? .zero
+                $0.center = center
                 $0.radius = 300
                 $0.angle = .pi / 2
+            }
+            .applyingFilter(CIFilter.bumpDistortion()) {
+                $0.center = center
+                $0.radius = 300
+                $0.scale = Float(1 + cos(CACurrentMediaTime())) / 5
             }
     }
 
@@ -50,7 +47,6 @@ class AboutViewController: UIViewController {
             .applying(CGAffineTransform(scaleX: 1, y: -1))
             .applying(CGAffineTransform(translationX: 0, y: view.bounds.height))
             .applying(CGAffineTransform(scaleX: scale, y: scale))
-
 
         if [.cancelled, .ended].contains(gesture.state) {
             snapshotImage = nil
@@ -80,6 +76,12 @@ class AboutViewController: UIViewController {
         mtkView.device = device
         mtkView.delegate = self
         mtkView.framebufferOnly = false
+    }
+    
+    // MARK: -
+    
+    @IBAction private func nextPressed() {
+        nextPressedHandler?()
     }
 }
 

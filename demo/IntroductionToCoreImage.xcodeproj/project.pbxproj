@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A9345929697BFF004EE3CA /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A9345729697BFF004EE3CA /* OnboardingViewController.xib */; };
+		17A9345A29697BFF004EE3CA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A9345829697BFF004EE3CA /* OnboardingViewController.swift */; };
+		17A9345C29697C09004EE3CA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A9345B29697C09004EE3CA /* Coordinator.swift */; };
+		17A9345E296983E9004EE3CA /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A9345D296983E9004EE3CA /* CIImage+Extension.swift */; };
 		17DF3B362965FD3400FA0E23 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DF3B2C2965FD3400FA0E23 /* AboutViewController.swift */; };
 		17DF3B372965FD3400FA0E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DF3B2D2965FD3400FA0E23 /* AppDelegate.swift */; };
 		17DF3B392965FD3400FA0E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DF3B302965FD3400FA0E23 /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17A9345729697BFF004EE3CA /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		17A9345829697BFF004EE3CA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		17A9345B29697C09004EE3CA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		17A9345D296983E9004EE3CA /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		17DF3B142965FCF900FA0E23 /* IntroductionToCoreImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroductionToCoreImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DF3B2C2965FD3400FA0E23 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		17DF3B2D2965FD3400FA0E23 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A9345629697BFF004EE3CA /* OnboardingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17A9345829697BFF004EE3CA /* OnboardingViewController.swift */,
+				17A9345729697BFF004EE3CA /* OnboardingViewController.xib */,
+			);
+			path = OnboardingViewController;
+			sourceTree = "<group>";
+		};
 		17DF3B0B2965FCF900FA0E23 = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +74,12 @@
 		17DF3B2B2965FD3400FA0E23 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				17A9345629697BFF004EE3CA /* OnboardingViewController */,
 				17DF3B3D2965FEFC00FA0E23 /* AboutViewController */,
 				17DF3B2D2965FD3400FA0E23 /* AppDelegate.swift */,
+				17A9345B29697C09004EE3CA /* Coordinator.swift */,
 				17DF3B4029662EE600FA0E23 /* UIView+Snapshot.swift */,
+				17A9345D296983E9004EE3CA /* CIImage+Extension.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -144,6 +164,7 @@
 				17DF3B392965FD3400FA0E23 /* Assets.xcassets in Resources */,
 				17DF3B3F296627F100FA0E23 /* AboutViewController.xib in Resources */,
 				17DF3B3A2965FD3400FA0E23 /* LaunchScreen.storyboard in Resources */,
+				17A9345929697BFF004EE3CA /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +177,10 @@
 			files = (
 				17DF3B372965FD3400FA0E23 /* AppDelegate.swift in Sources */,
 				17DF3B362965FD3400FA0E23 /* AboutViewController.swift in Sources */,
+				17A9345C29697C09004EE3CA /* Coordinator.swift in Sources */,
+				17A9345E296983E9004EE3CA /* CIImage+Extension.swift in Sources */,
 				17DF3B4129662EE600FA0E23 /* UIView+Snapshot.swift in Sources */,
+				17A9345A29697BFF004EE3CA /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

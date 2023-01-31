@@ -18,7 +18,7 @@ class AboutViewController: UIViewController {
 
     private var processedImage: CIImage? {
         guard
-            let center = self.gestureLocation,
+            let center = gestureLocation,
             let snapshot = snapshotImage
         else { return nil }
         

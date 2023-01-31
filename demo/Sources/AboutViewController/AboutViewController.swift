@@ -31,13 +31,13 @@ class AboutViewController: UIViewController {
             .applyingFilter(CIFilter.bumpDistortion()) {
                 $0.center = center
                 $0.radius = 300
-                $0.scale = Float(1 + cos(CACurrentMediaTime())) / 5
+                $0.scale = 0.2
             }
     }
 
     @IBAction private func panGestureRecognized(_ gesture: UIPanGestureRecognizer) {
         if gesture.state == .began {
-            snapshotImage = CIImage(image: view.snapshot())
+            snapshotImage = view.snapshot()
             mtkView.isPaused = false
             mtkView.isHidden = false
         }
@@ -61,15 +61,9 @@ class AboutViewController: UIViewController {
 
     @IBOutlet var mtkView: MTKView!
 
-    private lazy var device = MTLCreateSystemDefaultDevice()!
+    private let context = CIContext()
+    private let device = MTLCreateSystemDefaultDevice()!
     private lazy var commandQueue = device.makeCommandQueue()!
-
-    private lazy var context = CIContext(
-        mtlCommandQueue: commandQueue,
-        options:  [
-            .cacheIntermediates: false,
-        ]
-    )
 
     override func viewDidLoad() {
         super.viewDidLoad()

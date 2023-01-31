@@ -44,7 +44,7 @@ class OnboardingViewController: UIViewController {
         return backgroundSourceSnapshot
             .applyingFilter(CIFilter.barsSwipeTransition()) {
                 $0.targetImage = backgroundTargetSnapshot
-                $0.angle =  .pi / 4
+                $0.angle =  9 * .pi / 5
                 $0.width = 150
                 $0.time = Float(progress)
             }
@@ -55,9 +55,9 @@ class OnboardingViewController: UIViewController {
         currentImage = (currentImage + 1) % onboardingImageNames.count
         let targetImageName = onboardingImageNames[currentImage]
         
-        backgroundSourceSnapshot = CIImage(image: backgroundView.snapshot())
+        backgroundSourceSnapshot = backgroundView.snapshot()
         backgroundView.image = UIImage(named: targetImageName)
-        backgroundTargetSnapshot = CIImage(image: backgroundView.snapshot())
+        backgroundTargetSnapshot = backgroundView.snapshot()
 
         startTime = CACurrentMediaTime()
         mtkView.isHidden = false
@@ -76,15 +76,9 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet var mtkView: MTKView!
 
-    private lazy var device = MTLCreateSystemDefaultDevice()!
+    private let context = CIContext()
+    private let device = MTLCreateSystemDefaultDevice()!
     private lazy var commandQueue = device.makeCommandQueue()!
-
-    private lazy var context = CIContext(
-        mtlCommandQueue: commandQueue,
-        options:  [
-            .cacheIntermediates: false,
-        ]
-    )
 
     override func viewDidLoad() {
         super.viewDidLoad()

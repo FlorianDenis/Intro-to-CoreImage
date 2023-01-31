@@ -5,12 +5,15 @@
 //  Created by Florian Denis on 04/01/2023.
 //
 
+import CoreImage
 import UIKit
 
 extension UIView {
-    public func snapshot() -> UIImage {
+    public func snapshot() -> CIImage? {
         let renderer = UIGraphicsImageRenderer(size: bounds.size)
-        return renderer.image { _ in drawHierarchy(in: bounds, afterScreenUpdates: true) }
+        return CIImage(image: renderer.image { _ in
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+        })
     }
 }
 
